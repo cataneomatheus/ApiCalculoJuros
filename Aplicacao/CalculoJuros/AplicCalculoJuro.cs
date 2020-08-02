@@ -10,7 +10,7 @@ namespace Aplicacao.CalculoJuros
     {
         public decimal Calcular(decimal valorIni, int tempo)
         {
-            var juros = GetJuros();
+            var juros = 0.01; // GetJuros();
 
             var montante = (decimal)((double)valorIni * Math.Pow(1 + juros, tempo));
 
