@@ -10,7 +10,7 @@ namespace Aplicacao.CalculoJuros
     {
         public decimal Calcular(decimal valorIni, int tempo)
         {
-            var juros = 0.01; // GetJuros();
+            var juros = GetJuros();
 
             var montante = (decimal)((double)valorIni * Math.Pow(1 + juros, tempo));
 
@@ -20,7 +20,7 @@ namespace Aplicacao.CalculoJuros
         private double GetJuros()
         {
             var client = new HttpClient();
-            var response = client.GetAsync("http://localhost:51675/TaxaJuro").Result;
+            var response = client.GetAsync("http://localhost:44306/TaxaJuro").Result;
 
             if (!response.IsSuccessStatusCode)
                 throw new Exception("Erro ao recuperar api de cálculo de juros");

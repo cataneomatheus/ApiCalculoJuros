@@ -15,7 +15,7 @@ namespace Aplicacao.CalculoJuros.Tests
             AplicCalculoJuro aplicCalculoJuro = new AplicCalculoJuro();
             decimal result = aplicCalculoJuro.Calcular(100, 5);
             
-            Assert.AreEqual((decimal)105.11, result);
+            Assert.AreEqual(105.11m, result);
         }
     }
 }

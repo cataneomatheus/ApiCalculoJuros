@@ -12,13 +12,13 @@ namespace Aplicacao.UrlGitHub
             var ret = new List<UrlGitHubView>();
             
             ret.Add(new UrlGitHubView() { 
-                NomeApi = "ApiCalculoJuro",
-                UrlApi = "https://github.com/cataneomatheus/ApiCalculoJuro.git"
+                NomeApi = "ApiCalculoJuros",
+                UrlApi = "https://github.com/cataneomatheus/ApiCalculoJuros.git"
             });
 
             ret.Add(new UrlGitHubView()
             {
-                NomeApi = "ApiTaxaJuro",
+                NomeApi = "ApiTaxaJuros",
                 UrlApi = "https://github.com/cataneomatheus/ApiTaxaJuros.git"
             });
 

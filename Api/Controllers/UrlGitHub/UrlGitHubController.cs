@@ -18,7 +18,7 @@ namespace ApiCalculoJuro.Controllers.UrlGitHub
             _urlGitHub = urlGitHub;
         }
         [HttpGet]
-        public List<UrlGitHubView> GetUrlGitHub()
+        public List<UrlGitHubView> ShowMeTheCode()
         {
             return _urlGitHub.GetUrlGitHub();
         }
