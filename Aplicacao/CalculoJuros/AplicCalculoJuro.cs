@@ -20,7 +20,7 @@ namespace Aplicacao.CalculoJuros
         private double GetJuros()
         {
             var client = new HttpClient();
-            var response = client.GetAsync("http://localhost:44306/TaxaJuro").Result;
+            var response = client.GetAsync("http://localhost:44395/TaxaJuro").Result;
 
             if (!response.IsSuccessStatusCode)
                 throw new Exception("Erro ao recuperar api de cálculo de juros");

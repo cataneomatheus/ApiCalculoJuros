@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace ApiCalculoJuro.Controllers.UrlGitHub
 {
     [ApiController]
-    [Route("UrlGitHub")]
+    [Route("ShowMeTheCode")]
     public class UrlGitHubController : ControllerBase
     {
         private readonly IAplicUrlGitHub _urlGitHub;
