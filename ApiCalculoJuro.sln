@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{EEB1F0A8-48BE-4E7D-9BF3-893A9142492E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{EEB1F0A8-48BE-4E7D-9BF3-893A9142492E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacao", "Aplicacao\Aplicacao.csproj", "{B0148BE3-831D-4B49-8FD7-B1C16F7209BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aplicacao", "Aplicacao\Aplicacao.csproj", "{B0148BE3-831D-4B49-8FD7-B1C16F7209BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AplicacaoTests", "AplicacaoTests\AplicacaoTests.csproj", "{CC30580C-C9FD-4BE0-A3C5-69AE8012600D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AplicacaoTests", "AplicacaoTests\AplicacaoTests.csproj", "{CC30580C-C9FD-4BE0-A3C5-69AE8012600D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TesteIntegracao", "TesteIntegracao\TesteIntegracao.csproj", "{93E6F727-2F0F-418F-B402-543DF239483F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{CC30580C-C9FD-4BE0-A3C5-69AE8012600D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC30580C-C9FD-4BE0-A3C5-69AE8012600D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC30580C-C9FD-4BE0-A3C5-69AE8012600D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E6F727-2F0F-418F-B402-543DF239483F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E6F727-2F0F-418F-B402-543DF239483F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E6F727-2F0F-418F-B402-543DF239483F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E6F727-2F0F-418F-B402-543DF239483F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

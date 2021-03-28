@@ -1,8 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Aplicacao.CalculoJuros;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Aplicacao.CalculoJuros.Dto;
+using Aplicacao.TaxaJuros;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace Aplicacao.CalculoJuros.Tests
 {
@@ -10,12 +9,20 @@ namespace Aplicacao.CalculoJuros.Tests
     public class AplicCalculoJuroTests
     {        
         [TestMethod()]       
-        public void CalcularTest()
+        public async System.Threading.Tasks.Task CalcularTestAsync()
         {
-            AplicCalculoJuro aplicCalculoJuro = new AplicCalculoJuro();
-            decimal result = aplicCalculoJuro.Calcular(100, 5);
-            
-            Assert.AreEqual(105.11m, result);
+            var mockaplicCalculoJuro = new Mock<IAplicTaxaJuro>();
+            mockaplicCalculoJuro.Setup(p => p.GetJuros()).ReturnsAsync(0.01m);
+
+            var calculaJurosAplic = new AplicCalculoJuro(mockaplicCalculoJuro.Object);
+            var dto = new CalculoJurosDto
+            {
+                ValorInicial = 100,
+                Meses = 5
+            };
+
+            var result = await calculaJurosAplic.Calcular(dto);
+            Assert.AreEqual(105.10m, result);
         }
     }
 }

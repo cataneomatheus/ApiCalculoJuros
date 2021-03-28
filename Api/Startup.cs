@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Aplicacao.CalculoJuros;
+using Aplicacao.TaxaJuros;
 using Aplicacao.UrlGitHub;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace Api
 {
@@ -27,11 +21,18 @@ namespace Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigInjecao(services);
+            services.AddSingleton(Configuration);
+            services.AddHttpClient();
             services.AddControllers();
             services.AddSwaggerGen();
+        }
 
-            services.AddTransient<IAplicCalculoJuro, AplicCalculoJuro>();
-            services.AddTransient<IAplicUrlGitHub, AplicUrlGitHub>();
+        private void ConfigInjecao(IServiceCollection services)
+        {
+            services.AddScoped<IAplicTaxaJuro, AplicTaxaJuro>();
+            services.AddScoped<IAplicCalculoJuro, AplicCalculoJuro>();
+            services.AddScoped<IAplicUrlGitHub, AplicUrlGitHub>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,10 +43,7 @@ namespace Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Aplicacao.CalculoJuros.Dto;
+using System.Threading.Tasks;
 
 namespace Aplicacao.CalculoJuros
 {
     public interface IAplicCalculoJuro
     {
-        decimal Calcular(decimal valorIni, int tempo);
+        Task<decimal> Calcular(CalculoJurosDto dto);
     }
 }

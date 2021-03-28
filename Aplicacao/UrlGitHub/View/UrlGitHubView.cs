@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aplicacao.UrlGitHub.View
+﻿namespace Aplicacao.UrlGitHub.View
 {
     public class UrlGitHubView
     {

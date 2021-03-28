@@ -1,28 +1,33 @@
 ﻿using Aplicacao.UrlGitHub.View;
-using System;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Aplicacao.UrlGitHub
 {
     public class AplicUrlGitHub : IAplicUrlGitHub
     {
+        private readonly IConfiguration _configuration;
+
+        public AplicUrlGitHub(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         public List<UrlGitHubView> GetUrlGitHub()
         {
-            var ret = new List<UrlGitHubView>();
-            
-            ret.Add(new UrlGitHubView() { 
-                NomeApi = "ApiCalculoJuros",
-                UrlApi = "https://github.com/cataneomatheus/ApiCalculoJuros.git"
-            });
-
-            ret.Add(new UrlGitHubView()
+            return new List<UrlGitHubView>
             {
-                NomeApi = "ApiTaxaJuros",
-                UrlApi = "https://github.com/cataneomatheus/ApiTaxaJuros.git"
-            });
-
-            return ret;
+                new UrlGitHubView()
+                {
+                    NomeApi = "ApiCalculoJuros",
+                    UrlApi = _configuration["UrlGitApiCalculoJuros"]
+                },
+                new UrlGitHubView()
+                {
+                    NomeApi = "ApiTaxaJuros",
+                    UrlApi = _configuration["UrlGitApiTaxaJuros"]
+                }
+            };            
         }
     }
 }

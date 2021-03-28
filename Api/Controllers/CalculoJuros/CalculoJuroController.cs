@@ -1,8 +1,7 @@
 ﻿using Aplicacao.CalculoJuros;
+using Aplicacao.CalculoJuros.Dto;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ApiCalculoJuro.Controllers.CalculoJuros
@@ -18,12 +17,12 @@ namespace ApiCalculoJuro.Controllers.CalculoJuros
             _aplicCalculoJuro = aplicCalculoJuro;
         }
 
-        [HttpPost("Calcular")]
-        public decimal CalculaJuros(decimal valorInicial, int meses)
+        [HttpGet("Calcular")]
+        public async Task<decimal> CalculaJuros([FromQuery] CalculoJurosDto dto)
         {
             try
             {
-                return _aplicCalculoJuro.Calcular(valorInicial, meses);
+                return await _aplicCalculoJuro.Calcular(dto);
             }
             catch (Exception ex)
             {
