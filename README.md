@@ -13,7 +13,7 @@ Esta API tem como objetivo calcular e retornar um valor X de acordo com 3 parâm
 <h2><b>Rodar com Docker</b></h2>
 
 <p>Acesse a pasta raíz do projeto ApiCalculoJuros e no terminal e construa a imagem com o seguinte comando:</p>
-<code>docker build -t apicalculojuros-image -f Api/Dockerfile .</code>
+<p><code>docker build -t apicalculojuros-image -f Api/Dockerfile .</code></p>
 
 <p>Em seguida rode o container com o seguinte comando:</p>
 <code>docker run -it -d -v "$(pwd)\Api".ToLower() -p 5002:80 --rm --name apicalculojuros-container apicalculojuros-image</code>
